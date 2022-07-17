@@ -1,0 +1,4 @@
+Создание проекта при помощи <create-react-app name_of_project>
+прописываем в cmd команду <create-react-app name_of_project> в нужной папке
+
+запускаем проект при помощи команды <npx start>
