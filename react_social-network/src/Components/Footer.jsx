@@ -1,7 +1,10 @@
+import './Footer.css'
+
 const Footer = () => {
-    return(<div>
+    return(
+    <div>
         This is Footer!
-</div>)
+    </div>)
 }
 
 export {Footer}

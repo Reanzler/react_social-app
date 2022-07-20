@@ -1,0 +1,15 @@
+.nav {
+    background-color: rgb(241, 89, 14);
+    max-width: 100%;
+  
+    /* direct of grid */
+    grid-area: n;
+}
+
+.item a {
+    color: rgb(255, 255, 255);
+}
+
+.item2 a {
+    color: rgb(31, 227, 221);
+}
