@@ -1,10 +1,10 @@
 .content {
     background-color: rgb(75, 234, 91);
-  
+
     /* direct of grid */
     grid-area: c;
   }
 
-  .content img {
-    width: 100%;
-  }
+.imgBackground {
+  width: 100%;
+}

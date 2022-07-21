@@ -2,14 +2,15 @@
   display: grid;
   width: 1400px;
   margin: 0 auto;
+  box-shadow: 0px 0px 10px black;
 
   
   /* direct of grid */
   grid-template-rows: 0.1fr 1fr;
-  grid-template-columns: 2fr 10fr;
+  grid-template-columns: 1.2fr 10fr;
   grid-gap: 1px;
 
   grid-template-areas: 
-  "h h"
+  "n h"
   "n c";
 }

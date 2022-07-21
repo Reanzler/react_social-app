@@ -1,0 +1,9 @@
+.item {
+  font-size: 18px;
+  padding: 10px 15px 5px 15px;
+}
+
+.item > img {
+  width: 60px;
+  border-radius: 30px;
+}
