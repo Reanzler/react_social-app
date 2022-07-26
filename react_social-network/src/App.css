@@ -3,6 +3,7 @@
   width: 1400px;
   margin: 0 auto;
   box-shadow: 0px 0px 10px black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
   
   /* direct of grid */
@@ -13,4 +14,11 @@
   grid-template-areas: 
   "n h"
   "n c";
+}
+
+.app-wrapper-content {
+  background-color: rgb(75, 234, 91);
+
+  /* direct of grid */
+  grid-area: c;
 }
