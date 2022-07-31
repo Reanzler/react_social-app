@@ -3,8 +3,8 @@ import { Post } from './Post/Post'
 
 const MyPosts = (props) => {
     return(
-    <div>
-        My posts!
+    <div className={css.postBlock}>
+        <h3>My posts!</h3>
         <div>
             <textarea placeholder='Добавь новый пост - бестолочь!'></textarea>
             <div>    

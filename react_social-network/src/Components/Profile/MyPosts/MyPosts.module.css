@@ -3,3 +3,7 @@ textarea {
   height: 80px;
   box-shadow: inset 0px 0px 3px black;
 }
+
+.postBlock {
+  padding: 15px;
+}

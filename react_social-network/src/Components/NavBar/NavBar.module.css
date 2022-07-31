@@ -1,15 +1,27 @@
 .nav {
     background-color: rgb(241, 89, 14);
     max-width: 100%;
+    padding: 15px;
   
     /* direct of grid */
     grid-area: n;
 }
 
-.item a {
-    color: rgb(255, 255, 255);
+.nav > div {
+    padding: 10px;
 }
 
-.itemActive a {
+.item {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+
+}
+
+.active {
     color: rgb(31, 227, 221);
+    text-decoration: none;
+    
+    letter-spacing: 3px;
+    font-size: 18px;
+
 }
