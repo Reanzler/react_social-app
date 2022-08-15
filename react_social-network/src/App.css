@@ -1,7 +1,7 @@
 .app-wrapper {
   display: grid;
-  width: 1400px;
   margin: 0 auto;
+  max-width: 1920px;
   box-shadow: 0px 0px 10px black;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
@@ -17,7 +17,7 @@
 }
 
 .app-wrapper-content {
-  background-color: rgb(75, 234, 91);
+  background-color: rgb(255, 127, 80);
 
   /* direct of grid */
   grid-area: c;

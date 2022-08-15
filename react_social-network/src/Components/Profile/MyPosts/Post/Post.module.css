@@ -6,6 +6,8 @@
 .item > img {
   width: 60px;
   border-radius: 30px;
+  border: 1px solid black;
+  box-shadow: 0px 0px 5px black;
 }
 
 button {
