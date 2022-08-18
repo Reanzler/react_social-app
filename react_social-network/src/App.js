@@ -4,9 +4,8 @@ import { Header } from './Components/Header/Header';
 import { NavBar } from './Components/NavBar/NavBar';
 import { Profile } from './Components/Profile/Profile';
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
-import {state} from './State'
 
-function App() {
+function App(props) {
   return (
   <BrowserRouter> {/*Заварачиваем всю программу в данный тег обязательно*/}
     <div className='app-wrapper'>
@@ -14,8 +13,8 @@ function App() {
       <NavBar />
       <div className='app-wrapper-content'>
         <Routes> {/*Switcher*/}
-          <Route path='/profile' element={<Profile postsData={state.dialogsPage.postsData}/>} /> {/*Маршрут перекинет в компонент <Profile /> при появлении в командной строке Browser пути './profile' */}
-          <Route path='/dialogs' element={<Dialogs messages={state.profilePage.messages} dialogs={state.profilePage.dialogs}/>} /> 
+          <Route path='/profile' element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>} /> {/*Маршрут перекинет в компонент <Profile /> при появлении в командной строке Browser пути './profile' */}
+          <Route path='/dialogs' element={<Dialogs messages={props.state.dialogsPage.messages} dialogs={props.state.dialogsPage.dialogs}/>} /> 
         </Routes>
       </div>
     </div>

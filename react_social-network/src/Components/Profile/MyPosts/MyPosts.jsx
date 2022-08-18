@@ -1,14 +1,8 @@
 import React from 'react'
 import css from './MyPosts.module.css'
 import { Post } from './Post/Post'
-
 const MyPosts = (props) => {
 
-    // let postsData = [
-    //     {id: 1, message: 'Hi, How are u ?', likesCount: 12, DislikesCount: 2},
-    //     {id: 2, message: 'It is my first post!)', likesCount: 78, DislikesCount: 0},
-    //     {id: 3, message: 'Я тут!'}
-    // ]
 
     let postElements = props.postsData.map( data => <Post message={data.message} likesCount={data.likesCount} DislikesCount={data.DislikesCount}/>)
 
@@ -16,14 +10,20 @@ const MyPosts = (props) => {
 
     let addPost = () => {
         let text = newPostElement.current.value //Достаем из textarea текущее значение
-        alert(`Заглушка ${text}`)
+        props.addPost(text)
+        text = ''
+    }
+
+    let onPostChange = () => {  //Принимаем все изменения с textarea и отправляем на BLL 
+        let text = newPostElement.current.value
+        props.updateNewPostText(text)
     }
 
     return(
     <div className={css.postBlock}>
         <h3>My posts!</h3>
         <div>
-            <textarea ref={newPostElement} placeholder='Добавь новый пост!'></textarea> {/*ref, newPostElement ссылка текстового поля*/}
+            <textarea value={props.newPostText} onChange={onPostChange} ref={newPostElement} placeholder='Добавь новый пост!' /> {/*ref, newPostElement ссылка текстового поля*/}
             <div>    
                 <button onClick={ addPost }>Add post</button>
                 <button>Remove post</button>
