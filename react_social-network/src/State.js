@@ -1,4 +1,4 @@
-import {rerenderEntireTree} from './render.js'
+let rerenderEntireTree = () => {console.log('test')}
 
 let state = {
     dialogsPage: {
@@ -12,10 +12,9 @@ let state = {
         ],
         messages: [
             {id: 1, message: 'Hi, buddy!'},
+            {id: 1, message: 'Hi, buddy!'},
+            {id: 1, message: 'Hi, buddy!'},
             {id: 2, message: 'How are u, Baby?'},
-            {id: 3, message: 'Я тут!'},
-            {id: 3, message: 'Я тут!'},
-            {id: 3, message: 'Я тут!'},
             {id: 3, message: 'Я тут!'},
             {id: 3, message: 'Я тут!'},
             {id: 3, message: 'Я тут!'}
@@ -33,7 +32,7 @@ let state = {
 }
 
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         id: 5,
         message: state.profilePage.newPostText,
@@ -45,10 +44,14 @@ export let addPost = () => {
     rerenderEntireTree(state);
 }
 
-export let updateNewPostText = (newText) => {
+export const updateNewPostText = (newText) => {
 
     state.profilePage.newPostText = newText
     rerenderEntireTree(state);
+}
+
+export const subscribe = (observer) => { // Observer - наблюдатель, паттерн
+    rerenderEntireTree = observer
 }
 
 export {state}
