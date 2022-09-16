@@ -2,21 +2,19 @@ import React from 'react'
 import css from './MyPosts.module.css'
 import { Post } from './Post/Post'
 const MyPosts = (props) => {
-
-
+    
     let postElements = props.postsData.map( data => <Post message={data.message} likesCount={data.likesCount} DislikesCount={data.DislikesCount}/>)
 
     let newPostElement = React.createRef(); //Создаем ссылку для взаимодействия кнопки с textarea
 
     let addPost = () => {
         let text = newPostElement.current.value //Достаем из textarea текущее значение
-        props.addPost(text)
-        text = ''
+        props.dispatch({type: 'ADD-POST'})
     }
 
     let onPostChange = () => {  //Принимаем все изменения с textarea и отправляем на BLL 
         let text = newPostElement.current.value
-        props.updateNewPostText(text)
+        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', newText: text})
     }
 
     return(
