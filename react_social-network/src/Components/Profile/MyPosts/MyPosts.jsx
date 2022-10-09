@@ -1,5 +1,5 @@
 import React from 'react'
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../miniRedux/State' //Испортируем actionCreator
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../miniRedux/profileReducer' //Испортируем actionCreator
 import css from './MyPosts.module.css'
 import { Post } from './Post/Post'
 const MyPosts = (props) => {
@@ -14,16 +14,17 @@ const MyPosts = (props) => {
     />)
 
     let newPostElement = React.createRef(); //Создаем ссылку для взаимодействия кнопки с textarea
-     /* Достаем введенный текст (текст был ранее получен из поля textarea *вспомни архитектуру Flux*)
-    из _state и далее добавляем в textarea в атрибут value для отображения  */
 
     let addPost = () => {
-        let text = newPostElement.current.value //Достаем из textarea текущее значение
         props.dispatch(addPostActionCreator())
     }
 
     let onPostChange = () => {  //Принимаем все изменения с textarea и отправляем на BLL 
-        let text = newPostElement.current.value
+        let text = newPostElement.current.value //Достаем из textarea текущее значение
+/*
+Достаем введенный текст (текст был ранее получен из поля textarea *вспомни архитектуру Flux*)
+из _state и далее добавляем в textarea в атрибут value для отображения
+*/
         props.dispatch(updateNewPostTextActionCreator(text))
     }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import css from './Dialogs.module.css'
 import { DialogItem } from './DialogItem/DialogItem'
 import { Message } from './Messages/Message'
-import { sendMessageActionCreator, updateNewMessageBodyActionCreator} from './../../miniRedux/State'
+import { sendMessageActionCreator, updateNewMessageBodyActionCreator} from './../../miniRedux/dialogsReducer'
 
 
 const Dialogs = (props) => {
