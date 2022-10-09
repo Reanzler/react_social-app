@@ -1,8 +1,11 @@
-import { store } from './State';
+import { store } from './miniRedux/State';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+
+window.ZAGLUSHKA = 'https://www.meme-arsenal.com/memes/6bf688ba903a307a295ebf3a825d1be3.jpg' 
+window.store = store
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let rerenderEntireTree = () => {

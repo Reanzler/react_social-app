@@ -1,11 +1,14 @@
 import css from './Post.module.css'
 
+
 const Post = (props) => {
     return (  
         <div className={css.item}>
-            <img src='https://proprikol.ru/wp-content/uploads/2019/06/krasivye-kartinki-na-avu-3.jpg'/>
-            <div>Name Secondname</div>
-            {props.message}
+           <a href={window.ZAGLUSHKA}>
+                <img className={css.avatar} src={props.img}/>
+                <div className={css.name}>{props.name} {props.secondName}</div>
+            </a>
+            <div className={css.message}>{props.message}</div>
             <div>
                 <button>Like</button><span>{props.likesCount}</span>
                 <button>Dislike</button><span>{props.DislikesCount}</span>
@@ -14,4 +17,4 @@ const Post = (props) => {
     )
 }
 
-export {Post} 
+export {Post}
