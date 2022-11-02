@@ -1,7 +1,16 @@
 const ADD_POST ='ADD-POST' //type's - типы для actionCreator и для dispatch 
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
 
-const profileReducer = (state, action) => {
+let initialState = {
+        postsData: [
+            {id: 1, secondName: 'Hristoforov', name: 'Ivan', message: 'Hi, How are u ?', likesCount: 12, DislikesCount: 2, img: 'https://i.yapx.ru/Ra8I0.jpg'},
+            {id: 2, secondName: 'Antipina', name: 'Sasha', message: 'It is my first post!)', likesCount: 78, DislikesCount: 0, img: 'https://userologia.ru/wp-content/uploads/images/avatarki-dlya-tik-toka-.jpg'},
+            {id: 3, secondName: 'Tatarinov', name: 'Marat', message: 'Я тут!', img: 'https://shapka-youtube.ru/wp-content/uploads/2021/02/prikolnaya-avatarka-dlya-patsanov.jpg'}
+        ],
+        newPostText: ''
+}
+
+const profileReducer = (state = initialState, action) => {
     
     switch(action.type) {
         case ADD_POST:

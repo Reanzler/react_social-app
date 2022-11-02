@@ -1,4 +1,5 @@
 import css from './../Dialogs.module.css'
+import React from 'react'
 
 const Message = (props) => {
     return (

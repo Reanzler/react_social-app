@@ -4,6 +4,7 @@ import { Header } from './Components/Header/Header';
 import { NavBar } from './Components/NavBar/NavBar';
 import { Profile } from './Components/Profile/Profile';
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
+import React from 'react';
 
 function App(props) {
   return (

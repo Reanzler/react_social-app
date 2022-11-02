@@ -1,4 +1,5 @@
 import css from './ProfileInfo.module.css'
+import React from 'react';
 
 // https://static.schools.by/images/header-bg/img-17.jpg
 let exampleText = `ООО «Институт Мосинжпроект»
@@ -18,7 +19,7 @@ const ProfileInfo = (props) => {
     return(
         <div className={css.item}>
             <div>
-                <img className={css.imgBackground} src='https://static.schools.by/images/header-bg/img-17.jpg'/>
+                <img className={css.imgBackground} src='https://static.schools.by/images/header-bg/img-17.jpg' alt='Изображение не загрузилось, нет интернета!'/>
             </div>
             <div className={css.descriptionBlock}>
                 <img className={css.avatar} src="https://proprikol.ru/wp-content/uploads/2019/06/krasivye-kartinki-na-avu-3.jpg" alt="#" />

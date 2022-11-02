@@ -1,8 +1,9 @@
-import { store } from './miniRedux/Store.js';
+// import { store } from './miniRedux/Store.js';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { store } from './miniRedux/redux-store.js';
 
 window.ZAGLUSHKA = 'https://www.meme-arsenal.com/memes/6bf688ba903a307a295ebf3a825d1be3.jpg' 
 window.ZAGLUSHKA_2 = 'https://static8.depositphotos.com/1207999/1027/i/600/depositphotos_10275820-stock-photo-business-man-suit-avatar.jpg'
@@ -25,4 +26,8 @@ object.bind(store) - это передали указания в каком ко
 
 rerenderEntireTree(store.getState());
 
-store.subscribe(rerenderEntireTree)
+store.subscribe(()=> {
+  let state = store.getState()
+  rerenderEntireTree(state)
+})
+
