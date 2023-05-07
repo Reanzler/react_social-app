@@ -15,17 +15,13 @@ const MyPosts = (props) => {
 
     let newPostElement = React.createRef(); //Создаем ссылку для взаимодействия кнопки с textarea
 
-    let addPost = () => {
-        props.dispatch(addPostActionCreator())
+    let onAddPost = () => {
+        props.addPost()
     }
 
     let onPostChange = () => {  //Принимаем все изменения с textarea и отправляем на BLL 
         let text = newPostElement.current.value //Достаем из textarea текущее значение
-/*
-Достаем введенный текст (текст был ранее получен из поля textarea *вспомни архитектуру Flux*)
-из _state и далее добавляем в textarea в атрибут value для отображения
-*/
-        props.dispatch(updateNewPostTextActionCreator(text))
+        props.updateNewPostText(text)
     }
 
     return(
@@ -34,7 +30,7 @@ const MyPosts = (props) => {
         <div>
             <textarea value={props.newPostText} onChange={onPostChange} ref={newPostElement} placeholder='Добавь новый пост!' /> {/*ref, newPostElement ссылка текстового поля*/}
             <div>    
-                <button onClick={ addPost }>Add post</button>
+                <button onClick={ onAddPost }>Add post</button>
                 <button>Remove post</button>
             </div>
         </div>
